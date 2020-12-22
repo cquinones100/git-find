@@ -16,7 +16,7 @@ const git = require('simple-git')(options);
 
 clear();
 
-(async function () {
+const gitSearch = (async function () {
   const log = await git.log();
 
   const hashes = log.all.map(entry => entry.hash);
@@ -88,4 +88,7 @@ clear();
   exec('npm run build-static', () => {
     open('dist/index.html');
   });
-})();
+});
+
+gitSearch();
+

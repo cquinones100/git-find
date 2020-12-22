@@ -1,5 +1,5 @@
 {
-  "name": "git-find",
+  "name": "@cquinones100/git-search",
   "version": "1.0.0",
   "description": "Search git history",
   "main": "index.js",
