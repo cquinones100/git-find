@@ -7,7 +7,7 @@
     "build-static": "webpack --config webpack.static.config.js",
     "watch": "watch 'npm run build-static' ./src"
   },
-  "author": "",
+  "author": "Carlos D. Quinones",
   "license": "ISC",
   "dependencies": {
     "clear": "^0.1.0",
