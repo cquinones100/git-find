@@ -6,6 +6,7 @@ const { C: path, n: lineLimit = 20 } = argv;
 const clc = require('cli-color');
 const fs = require('fs');
 const { exec } = require('child_process');
+const open = require('open');
 
 const options = {
   baseDir: path || process.cwd()
@@ -76,7 +77,6 @@ clear();
     results.push(...processDiff(show));
   }
 
-  console.log('writing results')
   fs.writeFileSync(
     'results.json',
     JSON.stringify({
@@ -85,7 +85,7 @@ clear();
     })
   );
 
-  console.log('building webpack')
-
-  exec('npm run build-static');
+  exec('npm run build-static', () => {
+    open('dist/index.html');
+  });
 })();
