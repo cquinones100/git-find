@@ -1,0 +1,50 @@
+$item-background-color: bisque;
+$indent: 10px;
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .hover:hover {
+    cursor: pointer;
+    background-color: $item-background-color;
+  }
+
+  div {
+    display: inline-block;
+  }
+
+  li {
+    padding-left: $indent;
+  }
+
+  &.collapsed {
+    li {
+      display: none;
+    }
+
+    > div:before {
+      content: ">";
+    }
+  }
+
+  &.expanded {
+    > div:before {
+      content: "v";
+    }
+
+    li {
+      background-color: white;
+    }
+  }
+
+  code > pre {
+    margin-left: $indent;
+    background-color: white;
+
+    &.match {
+      color: red;
+    }
+  }
+}
